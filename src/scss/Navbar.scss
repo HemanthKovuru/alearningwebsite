@@ -1,0 +1,47 @@
+@import "./mixins";
+
+.navbar {
+  position: relative;
+
+  &__container {
+    box-shadow: 0 3px 6px #0000000f;
+  }
+  height: 7rem;
+  margin: 0 auto;
+
+  display: grid;
+  width: 114rem;
+
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  line-height: 7rem;
+
+  &__right {
+    justify-self: end;
+  }
+
+  @include responsive(tabport) {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+.logo {
+  font-size: 1.6rem;
+}
+
+.btn {
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  outline: none;
+
+  &-signup {
+    margin-left: 2rem;
+    background-color: #4caf50;
+    color: #fff;
+  }
+}

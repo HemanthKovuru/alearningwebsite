@@ -1,0 +1,182 @@
+@import "./mixins";
+
+// low opacity background for popup boxes
+.background-box {
+  position: fixed;
+  z-index: 99999;
+  background-color: #000;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  animation: glow 0.7s;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+////////////////////////////
+// form signup box
+///////////////////////////
+
+.signup-box {
+  width: 70rem;
+  height: 60rem;
+  border-radius: 1.5rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px #00000029;
+  padding: 4rem 2rem;
+
+  @include responsive(tabport) {
+    width: 50rem !important;
+  }
+}
+
+// sign up form
+.form {
+  &__signup {
+    width: 65%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.2rem;
+  }
+
+  &__input {
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    border: none;
+    opacity: 0.57;
+    border: 1px solid #707070;
+    width: 100%;
+  }
+}
+
+// custom input for differnt widths in form
+.custom__input {
+  grid-column: 1/-1;
+}
+
+.heading {
+  &__secondary {
+    font-size: 3.3rem;
+    margin-bottom: 1.3rem;
+    font-weight: 500;
+  }
+
+  &__sub {
+    font-size: 2.2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+// exit button for popups
+.cross {
+  position: absolute;
+  top: 2.3rem;
+  right: 2.5rem;
+  font-size: 2.2rem;
+  cursor: pointer;
+
+  @include responsive(mediumphone) {
+    right: 12rem;
+  }
+  @include responsive(mediumphone) {
+    right: 6rem;
+  }
+  @include responsive(threephone) {
+    right: 9rem;
+  }
+}
+
+.btn-submit {
+  font-size: 2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  margin: 2rem 0;
+  cursor: pointer;
+  background-color: #2ecc71;
+  color: #fff;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// interests
+.interests {
+  font-size: 1.5rem;
+  list-style: none;
+  text-align: left;
+  width: 70%;
+  grid-column: 1/-1;
+  & li {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1.2rem;
+    color: #fff;
+    border-radius: 20rem;
+    margin-right: 1rem;
+    background-color: rgb(5, 118, 66);
+
+    & span {
+      margin-left: 0.3rem;
+      font-weight: 400;
+      cursor: pointer;
+    }
+  }
+}
+
+// suggestion__dropdown
+
+.suggestion__dropdown {
+  list-style: none;
+  text-align: left;
+  font-size: 1.5rem;
+  grid-column: 1/-1;
+  margin-top: -1.3rem;
+  //   color: #fff;
+  width: 61.3%;
+  top: 61%;
+  position: absolute;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #ccc;
+  li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background-color: rgb(236, 236, 236);
+    }
+  }
+}
+
+.category-options {
+  position: relative;
+}
+
+// signup process step2
+.step2 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
